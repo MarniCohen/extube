@@ -12,9 +12,9 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
           [{:extube, "~> 0.0.1"}]
         end
 
-  2. Ensure extube is started before your application:
+  2. Add configuration options to `config.exs`;
 
-        def application do
-          [applications: [:extube]]
-        end
+        config :extube, Extube,
+          extube_url: "https://whatever",
+          extube_key: "https://super"
 
