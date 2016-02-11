@@ -4,17 +4,25 @@ defmodule Extube.Mixfile do
   def project do
     [app: :extube,
      version: "0.0.1",
-     elixir: "~> 1.2",
+     elixir: "~> 1.0",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     deps: deps]
+     deps: deps,
+     package: [
+       contributors: ["Paul E Lowndes"],
+       licenses: ["MIT"],
+       links: %{github: "https://github.com/gtcode/extube"}
+     ],
+     description: """
+     Elixir Youtube API v3 Client
+     """]
   end
 
   # Configuration for the OTP application
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:logger]]
+    [applications: [:logger, :inets, :ssl]]
   end
 
   # Dependencies can be Hex packages:
@@ -27,6 +35,8 @@ defmodule Extube.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    []
+    [{:exvcr, "~> 0.4.0", only: [:test]},
+     {:poison, "~> 1.4"}
+    ]
   end
 end
