@@ -1,6 +1,6 @@
 # Extube
 
-**TODO: Add description**
+**Elixir Youtube API V3 client**
 
 ## Installation
 
