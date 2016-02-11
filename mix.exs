@@ -22,7 +22,7 @@ defmodule Extube.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:logger, :inets, :ssl]]
+    [applications: [:logger, :inets, :ssl, :httpoison]]
   end
 
   # Dependencies can be Hex packages:
@@ -36,7 +36,8 @@ defmodule Extube.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [{:exvcr, "~> 0.4.0", only: [:test]},
-     {:poison, "~> 1.4"}
+     {:poison, "~> 1.5.2"},
+     {:httpoison, "~> 0.8.1"}
     ]
   end
 end
